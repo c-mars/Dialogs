@@ -56,13 +56,13 @@ public class AlertDialogFragment extends DialogFragment{
                     public void onClick(DialogInterface dialog, int which) {
                         long sz = 4*1024*1024; //4MB
                         txt.setText("load: + "+sz+"*"+Byte.SIZE);
-                        List<Byte> l = new LinkedList<>();
+                        List<Byte> l = new LinkedList<Byte>();
                         Timber.d("empty sz: "+l.size());
                         byte b;
                         for (long i = 0; i < sz; i++) {
                             b = (byte) i;
                             l.add(b);
-                            if (i % 10_000 == 0) {
+                            if (i % 10000 == 0) {
                                 Timber.d("" + i + ": " + b + " sz:"+l.size());
                             }
                         }
